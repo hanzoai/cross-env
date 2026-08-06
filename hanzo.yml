@@ -1,0 +1,6 @@
+# cross-env — typecheck plus the repo's own vitest suite. `npm test` is bare
+# `vitest`, which is WATCH mode and never exits on a runner; `test:run` is the
+# single-shot form the repo's own `validate` script uses.
+test:
+  - name: typecheck-and-vitest
+    run: npm ci --no-audit --no-fund && npm run typecheck && npm run test:run
